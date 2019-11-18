@@ -1,7 +1,12 @@
 export default class Controller {
-  constructor(param) {
-    this.__init();
-    this.__setEvent();
+  constructor(is_init = true) {
+    if(is_init){
+      this.__init();
+      this.__setEvent();
+    }else{
+      this.__setEvent();
+    }
+    
 
   }
 
