@@ -29,8 +29,11 @@ void main(void){
   float t = n2 * slideWidth;
 
   vec4 color = texture2D(backbuffer, vUv + vec2(s * t, 0.0));
+  float c_r = texture2D(backbuffer, vUv + vec2(s * 2.0 * t, 0.0)).r;
+  float c_g = texture2D(backbuffer, vUv + vec2(s  * 1.5 * t, 0.0)).g;
+  float c_b = texture2D(backbuffer, vUv + vec2(s * 1.2  * t, 0.0)).b;
   
   
-  gl_FragColor = color;
+  gl_FragColor = vec4(c_r,c_g,c_b,color.a);
 }
 

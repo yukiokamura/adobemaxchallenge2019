@@ -4,6 +4,7 @@ import PostEffect from './PostEffect/Controller.es6';
 export default class Controller extends Base{
   constructor() {
     super();
+    //賑やかたす
   }
 
 
@@ -30,7 +31,10 @@ export default class Controller extends Base{
         this.mesh.add(obj.mesh);
       })
     })
+    
   }
+  
+  
   
   
   load(path){

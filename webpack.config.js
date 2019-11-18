@@ -51,6 +51,11 @@ module.exports = {
       {test: /\.(glsl|frag|vert|vs|fs)$/, loader: 'glslify-loader'},
     ],
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      gsap: ['gsap', 'gsap']
+    })
+  ],
   resolve: {
     modules: [
       path.resolve(__dirname, "./"),

@@ -25,17 +25,33 @@ export default class Controller extends Base{
         vertexShader: vert,
         fragmentShader: frag,
         uniforms: {
-            time: { type: 'f', value: 0 },
-            resolution:{type:'v2',value:new THREE.Vector2(window.innerWidth*window.devicePixelRatio,window.innerHeight * window.devicePixelRatio)},
+            time: { type: 'f', value: 0.0 },
+            resolution:{type:'v2',value:new THREE.Vector2(this.w*window.devicePixelRatio,this.h * window.devicePixelRatio)},
             uTex:{type:'t',value:this.texture},
             imageResolution:{type:'v2',value:new THREE.Vector2(this.w,this.h)},
         },
         transparent: true,
-        depthTest:true,
+        depthTest:false,
     });
     
     this.mesh = new THREE.Mesh(geometry,material);
     this.mesh.position.x = this.margins[this.index]
+    // this.mesh.position.z = -10000
+    this.timeline();
+  }
+  
+  
+  timeline(){
+    console.log(this.index);
+    const tl = gsap.timeline();
+    tl.to(this.mesh.material.uniforms.time,2,{
+      value:1.0,
+      ease: "circ.inout"
+    },0)
+    // .to(this.mesh.position,.2,{
+    //   z:0,
+    //   ease: "circ.out",
+    // },0 + this.index * .5)
   }
 
 

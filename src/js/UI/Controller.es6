@@ -18,9 +18,12 @@ export default class Controller extends Base{
       this.setup.base.scene.add(this.mv.mesh);
       this.tpp = new TPP(this.setup.base.renderer,this.mv.postEffect.pp_params);
       this.setup.base.tpp = this.tpp;
+      // this.timeline()
     }
     
   }
+  
+
 
 
 
@@ -35,7 +38,8 @@ export default class Controller extends Base{
 
 
   update(){
-    this.setup.base.tpp.effectMaterials[0].material.uniforms.time.value += .1;
+    
+    
     this.setup.base.render(true);
   }
 
