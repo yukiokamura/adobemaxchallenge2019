@@ -1,5 +1,8 @@
-
-
+<%include('../ejs/_data'); var meta = getData();%>
+<%
+var absolutePath = filename.split(site.developDir)[filename.split(site.developDir).length -1].replace('.ejs','.html');
+var relativePath = '../'.repeat([absolutePath.split('/').length -1]);
+%>
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="touch">
   <head>
@@ -8,11 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="" name="description">
     <meta name="keywords" content="">
-    <link rel="stylesheet" href="/assets/css/style.css?0.6617165281250748">
+    <link rel="stylesheet" href="/assets/css/style.css?<%=Math.random()%>">
     <script src='/assets/js/lib.js' defer></script>
-    <script src="/assets/js/app.js?0.0979341503651654" defer></script>
+    <script src="/assets/js/app.js?<%=Math.random()%>" defer></script>
   </head>
-  <body class="01">
+  <body class="02">
     <div class="canvas"></div>
     <div class="license"><img src="/assets/img/footer.png"></div>
   </body>

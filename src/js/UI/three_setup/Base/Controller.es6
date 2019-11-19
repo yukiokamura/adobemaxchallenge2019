@@ -49,6 +49,7 @@ export default class ClassName {
       alpha: true,
     });
     this.onWindowResize(true);
+    this.renderer.setClearColor( 0x000000, 1);
     this.$dom.append(this.renderer.domElement);
   }
   
