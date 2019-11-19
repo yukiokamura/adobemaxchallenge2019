@@ -12,9 +12,9 @@ export default class Controller extends Base{
   init(){
     this.name = '01Controller';
     this.paths = [
-      '/assets/img/m.png',
-      '/assets/img/a.png',
-      '/assets/img/x.png',
+      '../assets/img/m.png',
+      '../assets/img/a.png',
+      '../assets/img/x.png',
     ];
     this.loader = new THREE.TextureLoader();
     const p = [];
